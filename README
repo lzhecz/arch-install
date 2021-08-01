@@ -7,6 +7,11 @@ gdisk /dev/nvme0n1
 #create +300M ef00 and linux fs
 #w - write changes
 
+#lazy-btrfs
+#curl -LO https://git.io/JBSiK
+#sh lazy-btrfs.sh
+#lazy start
+
 mkfs.vfat /dev/nvme0n1p1
 mkfs.btrfs -f /dev/nvme0n1p2
 
@@ -29,6 +34,8 @@ mount /dev/nvme0n1p1 /mnt/boot
 lsblk
 
 pacstrap /mnt base linux linux-firmware git nano amd-ucode btrfs-progs
+
+#lazy end
 
 #after pacstrap
 
