@@ -9,6 +9,7 @@ gdisk /dev/nvme0n1
 
 #lazy-btrfs
 #curl -LO https://git.io/JBSiK
+# or https://t.ly/A1xL
 #sh lazy-btrfs.sh
 #lazy start
 
