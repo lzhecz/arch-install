@@ -29,7 +29,7 @@ mount -o noatime,compress=zstd,space_cache,discard=async,subvol=@ /dev/nvme0n1p2
 mkdir /mnt/{boot,home,var}
 mount -o noatime,compress=zstd,space_cache,discard=async,subvol=@home /dev/nvme0n1p2 /mnt/home
 mount -o noatime,compress=zstd,space_cache,discard=async,subvol=@var /dev/nvme0n1p2 /mnt/var
-mount /dev/nvme0n1p1 /mnt/boot
+mount /dev/nvme0n1p1 /mnt/boot/efi
 
 lsblk
 
