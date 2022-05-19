@@ -19,4 +19,4 @@ mount /dev/nvme1n1p1 /mnt/boot/efi
 
 lsblk
 
-pacstrap /mnt base linux linux-firmware git nano amd-ucode btrfs-progs
+pacstrap /mnt base linux linux-firmware git nano intel-ucode btrfs-progs
