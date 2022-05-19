@@ -18,5 +18,3 @@ mount -o noatime,compress=zstd,ssd,space_cache=v2,discard=async,subvol=@var /dev
 mount /dev/nvme1n1p1 /mnt/boot/efi
 
 lsblk
-
-pacstrap /mnt base linux linux-firmware git nano intel-ucode btrfs-progs
