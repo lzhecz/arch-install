@@ -1,5 +1,5 @@
 mkfs.vfat /dev/nvme1n1p1
-mkfs.btrfs /dev/nvme1n1p2
+mkfs.btrfs -f /dev/nvme1n1p2
 
 #create subvolumes
 mount /dev/nvme1n1p2 /mnt
