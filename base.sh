@@ -1,7 +1,7 @@
 #!/bin/bash
 ln -sf /usr/share/zoneinfo/Europe/Kiev /etc/localtime
 hwclock --systohc
-sed -i '178s/.//' /etc/locale.gen
+sed -i '177s/.//' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=en_US.UTF-8" >> /etc/vconsole.conf
