@@ -13,7 +13,7 @@ umount /mnt
 #mount subvolumes
 mount -o noatime,compress=zstd,ssd,space_cache=v2,discard=async,subvol=@ /dev/sda2 /mnt
 mkdir -p /mnt/{boot/efi,home}
-mount -o noatime,compress=zstd,ssd,space_cache=v2,discard=async,subvol=@home /dev/sdb1 /mnt/home
+mount -o noatime,compress=zstd,space_cache=v2,discard=async,subvol=@home /dev/sdb1 /mnt/home
 mount /dev/sda1 /mnt/boot/efi
 
 lsblk
