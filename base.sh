@@ -15,7 +15,6 @@ read -sp 'Password: ' passvar
 
 echo root:$passvar | chpasswd
 
-pacman -S xorg-server xorg-xinit # xorg
 pacman -S grub grub-btrfs efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils 
 pacman -S bash-completion openssh rsync dnsmasq openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns os-prober ntfs-3g terminus-font
 pacman -S --noconfirm alsa-utils wireplumber pipewire pipewire-alsa pipewire-pulse pipewire-jack gst-plugin-pipewire libpulse # Audio
