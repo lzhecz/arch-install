@@ -2,11 +2,15 @@ mkfs.vfat /dev/sda1
 mkfs.btrfs -f /dev/sda2
 mkfs.btrfs -f /dev/sdb1
 #create subvolumes
-mount /dev/nvme0n1p2 /mnt
+mount /dev/sda2 /mnt
 cd /mnt
 btrfs subvolume create @
+cd
+umount /mnt
+
+mount /dev/sdb1 /mnt
+cd /mnt
 btrfs subvolume create @home
-btrfs subvolume create @var
 cd
 umount /mnt
 
