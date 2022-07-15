@@ -26,10 +26,10 @@ yay -S brave-bin polkit polkit-gnome nitrogen lxappearance-gtk3 pcmanfm-gtk3 hto
 
 # Install fonts
 
-sudo pacman -S xorg-server xorg-xwininfo xorg-xinit xcompmgr xorg-xprop xorg-xbacklight # xorg
+yay -S --noconfirm xorg-server xorg-xwininfo xorg-xinit xcompmgr xorg-xprop xorg-xbacklight # xorg
 yay -S --noconfirm dina-font tamsyn-font bdf-unifont ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid gnu-free-fonts ttf-ibm-plex ttf-liberation ttf-linux-libertine noto-fonts ttf-roboto tex-gyre-fonts ttf-ubuntu-font-family ttf-anonymous-pro ttf-cascadia-code ttf-fantasque-sans-mono ttf-fira-mono ttf-hack ttf-fira-code ttf-inconsolata ttf-jetbrains-mono ttf-monofur adobe-source-code-pro-fonts cantarell-fonts inter-font ttf-opensans gentium-plus-font ttf-junicode adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts noto-fonts-cjk noto-fonts-emoji
-yay -S zsh rofi picom-animations-git gpick xclip imagemagick dunst dosfstools exfat-utils betterlockscreen-git lf-git ueberzug flameshot tigervnc gparted gnome-disks gnome-system-monitor gnome-keyring zsh-fast-syntax-highlighting-git
-yay -S timeshift timeshift-autosnap arandr bitwarden blueman pavucontrol pamixer pulsemixer dracula-gtk-theme python-qdarkstyle man-db wireplumber pipewire pipewire-pulse pipewire-alsa unclutter xdotool fzf 
+yay -S --noconfirm zsh rofi picom-animations-git gpick xclip imagemagick dunst dosfstools exfat-utils betterlockscreen-git lf-git ueberzug flameshot tigervnc gparted gnome-disk-utility gnome-system-monitor gnome-keyring zsh-fast-syntax-highlighting-git
+yay -S --noconfirm timeshift timeshift-autosnap arandr bitwarden blueman pavucontrol pamixer pulsemixer dracula-gtk-theme python-qdarkstyle man-db wireplumber pipewire pipewire-pulse pipewire-alsa unclutter xdotool fzf 
 yay -S --noconfirm telegram-desktop-bin discord visual-studio-code-bin remmina libvncserver etcher-bin neofetch
 
 # Pull Git repositories and install 
