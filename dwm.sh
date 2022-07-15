@@ -57,4 +57,43 @@ Type=XSession
 EOF
 sudo cp ./temp /usr/share/xsessions/dwm.desktop;rm ./temp
 
+
+
+dotfilesrepo="https://github.com/lzhecz/dotfiles.git"
+repobranch="main"
+name="lzhecz"
+
+putgitrepo() {
+	# Downloads a gitrepo $1 and places the files in $2 only overwriting conflicts
+	[ -z "$3" ] && branch="master" || branch="$repobranch"
+	dir=$(mktemp -d)
+	[ ! -d "$2" ] && mkdir -p "$2"
+	chown "$name":wheel "$dir" "$2"
+	sudo -u "$name" git -C "$repodir" clone --depth 1 \
+		--single-branch --no-tags -q --recursive -b "$branch" \
+		--recurse-submodules "$1" "$dir"
+	sudo -u "$name" cp -rfT "$dir" "$2"
+}
+
+putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
+rm -rf "/home/$name/.git/" "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/FUNDING.yml"
+
+# Most important command! Get rid of the beep!
+rmmod pcspkr
+echo "blacklist pcspkr" >/etc/modprobe.d/nobeep.conf
+
+# Make zsh the default shell for the user.
+chsh -s /bin/zsh "$name" >/dev/null 2>&1
+sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
+
+# Enable tap to click
+[ ! -f /etc/X11/xorg.conf.d/40-libinput.conf ] && printf 'Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+	# Enable left mouse button by tapping
+	Option "Tapping" "on"
+EndSection' >/etc/X11/xorg.conf.d/40-libinput.conf
+
 printf "\e[1;32mDone! you can now reboot.\e[0m\n"
