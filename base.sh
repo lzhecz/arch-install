@@ -18,14 +18,14 @@ echo root:$passvar | chpasswd
 pacman -S xorg-server xorg-xinit # xorg
 pacman -S grub grub-btrfs efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools reflector base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils 
 pacman -S bash-completion openssh rsync dnsmasq openbsd-netcat iptables-nft ipset firewalld flatpak sof-firmware nss-mdns os-prober ntfs-3g terminus-font
-pacman -S alsa-utils wireplumber pipewire pipewire-alsa pipewire-pulse pipewire-jack gst-plugin-pipewire libpulse # Audio
-pacman -S virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils vde2 # VM packages
-pacman -S acpi acpi_call acpid # power managment
-pacman -S tlp # power saving for notebook
+pacman -S --noconfirm alsa-utils wireplumber pipewire pipewire-alsa pipewire-pulse pipewire-jack gst-plugin-pipewire libpulse # Audio
+pacman -S --noconfirm virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils vde2 # VM packages
+pacman -S --noconfirm acpi acpi_call acpid # power managment
+pacman -S --noconfirm tlp # power saving for notebook
 #pacman -S cups hplip # printers
 
 # pacman -S --noconfirm xf86-video-amdgpu
-pacman -S --noconfirm nvidia dkms nvidia-dkms nvidia-utils nvidia-settings
+pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
 pacman -S --noconfirm mesa
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
